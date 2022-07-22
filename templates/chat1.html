@@ -1,0 +1,13 @@
+<html>
+
+
+
+<body>
+
+    {% if session.name %}
+    you re logged in as {{ session.name }}<a href="/logout">Log out </a>
+    {% else %}
+you are not logged in
+{% endif %}
+</body>
+</html>

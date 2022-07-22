@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" >
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/signupstyle.css')}}">
+
+  </head>
+  </head>
+  <body>
+    <form action="sign" method="post" name="myform2" >
+<div class="login-box">
+  <h1>Sign Up</h1>
+  <div class="textbox">
+    <i class="fas fa-user"></i>
+    <input type="text"name="uname1" placeholder="Name">
+  </div>
+  <div class="textbox">
+    <i class="fas fa-envelope"></i>
+    <input  type="email"name="email1" placeholder="Email">
+    </div>
+    <div class="textbox">
+    
+      <input  type="text"name="age" placeholder="age">
+      </div>
+      <div class="textbox">
+    
+        <input  type="text"name="phonenumber" placeholder="phonenumber">
+        </div>
+        <div class="textbox">
+    
+
+  <div class="textbox">
+    <i class="fas fa-lock"></i>
+    <input type="password" name="upswd1" placeholder="Password">
+    </div>
+    <div class="textbox">
+      <i class="fas fa-lock"></i>
+      <input type="password"name ="upswd2" placeholder="Confirm Password">
+      </div>
+ <div id="errorBox"></div>
+
+<input  type="submit"class="btn " value="Sign up">
+
+
+
+
+<p>
+  Already have a account??<a href="{{url_for('login_pg')}}">Log In</a>
+</p>
+
+</div>
+  </body>
+</form>
+</html>

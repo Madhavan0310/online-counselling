@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>CHAT ROOM</title>
+  <!--Link to CSS -->
+  <link href="../static/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+  <script type="text/javascript" charset="utf-8">
+      var socket;
+      $(document).ready(function(){
+          socket = io.connect('http://' + document.domain + ':' + location.port + '/chat');
+          socket.on('connect', function() {
+              socket.emit('join', {});
+          });
+          socket.on('status', function(data) {
+              $('#chat').val($('#chat').val() + '<' + data.msg + '>\n');
+              $('#chat').scrollTop($('#chat')[0].scrollHeight);
+          });
+          socket.on('message', function(data) {
+              $('#chat').val($('#chat').val() + data.msg + '\n');
+              $('#chat').scrollTop($('#chat')[0].scrollHeight);
+          });
+          $('#send').click(function(e) {
+                  text = $('#text').val();
+                  $('#text').val('');
+                  socket.emit('text', {msg: text});
+          });
+      });
+      function leave_room() {
+          socket.emit('left', {}, function() {
+              socket.disconnect();
+              // go back to the login page
+              window.location.href = "{{ url_for('index') }}";
+          });
+      }
+  </script>
+</head>
+
+<body class="text-center">
+  <section class="colored-section" id="title">
+
+    <div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+
+    <a class="navbar-brand" href="">TherapyHome</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#footer">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#pricing">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#cta">Signin</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  </div>
+  </section>
+  <div class="chatwindow">
+    <br>
+    <h2 style="color:rgb(7, 7, 7);">CHAT ROOM</h2>
+    <h3 style="color:rgb(7, 7, 7);">Room : {{session['room']}}</h3><br>
+    <textarea id="chat" style="border:inset 4px rgb(7, 7, 7);" cols="80" rows="10" placeholder="No messages yet. Start one..."></textarea><br /><br />
+    <input type="text" style="opacity:0.7;" style="padding:30px;" id="text" size="68" placeholder="Enter your message here" />
+    <button type="button" id="send" class="btn btn-success">SEND</button><br /><br />
+    <center><button type="button" class="btn btn-danger" onclick=leave_room()>Leave this Chat</button></center>
+  </div>
+</body>
+
+</html>

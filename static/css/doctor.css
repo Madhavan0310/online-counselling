@@ -1,0 +1,67 @@
+
+body{
+	background-image: url("member.jpg");
+	background-position: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#header{
+	background: #00a2d1;
+	width: 80%;
+	height: 50px;
+	margin: 10px;
+	padding: 10px;
+	color: #fff;
+	border-radius: 20px;
+	font-size: 50px;
+}
+select{
+	margin: 10px 0px 10px 0px;
+	padding: 5px;
+	border-radius: 10px;
+	font-family: verdana;
+	font-size: 15px;
+	width: 330px;
+}
+.form-style{
+	background: rgba(0, 0, 0, 0.03);
+	font-family: verdana;
+	width: 500px;
+	padding: 20px;
+	
+	margin: 30px auto;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22) ;
+}
+.textarea-field{
+	height: 100px;
+	width: 330px;
+	border-radius: 5px;
+}
+.form-style h2{
+	background: #43D1AF;
+	font-family: sans-serif;
+	color: #FFFFFF;
+	font-weight: 500;
+	font-variant: small-caps;
+	font-size: 20px;
+	padding: 10px;
+	margin: 10px;
+}
+.input-group{
+
+	margin: 10px 0px 10px 0px;
+}
+.input-group input{
+	padding: 5px;
+	border-radius: 10px;
+}
+
+.btn{
+	font-size: 20px;
+	padding: 5px;
+	border-radius: 5px;
+	margin-top: 10px;
+	background-color: #00a2d1;
+	color: white ;
+}

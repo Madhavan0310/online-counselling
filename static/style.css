@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+html,
+body {
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+
+
+.form-signin {
+  width: 100%;
+  max-width:350px;
+  padding: 10px;
+  margin: auto;
+  margin-left:500px;
+  margin-top:95px;
+}
+
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 15px;
+  font-size: 15px;
+  margin-bottom:5px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+  margin-bottom:5px;
+}
+h2{
+  text-align: center;
+  font-family: Century Gothic;
+}
+
+.navbar {
+  padding: 0 0 4.5rem;
+
+}
+
+.navbar-brand {
+  font-family: "Ubuntu";
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.nav-item {
+  padding: 0 15px;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  font-family: "Montserrat-Light";
+  padding: 7% 15%;
+
+}
+.container-fluid{
+  padding: 1% 15%;
+}
+
+/* Sections */
+
+.colored-section {
+  background-color: #070707;
+  color: #fff;
+}
+.btn{
+  box-sizing: border-box;
+  color: #fcfafa;
+  background-color: #252424;
+  border-radius: 8px;
+  border-style: none;
+  padding: 10px 16px;
+  height: 40px;
+  width:330px;
+}
+.btn:hover,
+.btn:focus {
+  background-color: #949092;
+}

@@ -1,0 +1,63 @@
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+html,
+body {
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+
+}
+.navbar {
+    padding: 0 0 1rem;
+  
+  }
+  
+  .navbar-brand {
+    font-family: "Ubuntu";
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .nav-item {
+    padding: 0 13px;
+  }
+  
+  .nav-link {
+    font-size: 1.2rem;
+    font-family: "Montserrat-Light";
+    padding: 1% 10%;
+}
+  .container-fluid{
+    padding: 1% 15%;
+  }
+  .colored-section {
+    background-color: #070707;
+    color: #fff;
+  }
+  #button
+  {
+  	float: center;
+
+  }
+.op
+{
+	padding-left: 20%;
+}
+.uf {
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    resize: none;
+    outline: none;
+}
+#button
+{
+	border-radius: 10px;
+	
+	
+	
+}
+.up
+{
+	padding-left: 10%;
+}

@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>VOICE SEARCH</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/voice.css') }}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+        <script defer src ="{{url_for('static', filename='css/voice.js')}}"></script>
+        
+
+    </head>
+    <body>
+        
+        <section class="colored-section" id="title">
+
+          <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+
+          <a class="navbar-brand" href="">TherapyHome</a>
+  
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+  
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#footer">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#pricing">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#cta">Signin</a>
+              </li>
+            </ul>
+  
+          </div>
+        </nav>
+        </div>
+        </section><br>
+        <h4 style="text-align: center;">Live streaming</h4>
+        <p style="text-align:center;"> {{message}}
+        </p>
+        <br>
+        <div class="d-flex flex-row bd-highlight mb-3">
+        <div class="p-2 bd-highlight">
+          <img src="{{ url_for('video') }}" style="width:450px;"/>
+        </div>
+        <div class="p-2 bd-highlight" >
+          <div class="d-flex flex-column">
+          <br><br><br>
+          <div class="p-2">
+          <form action="/thread" id ="search-form"> 
+              <input style="padding:50px;" required name="name1" type="text" placeholder="Speak now..." autocomplete="off" autofocus>
+            <p class="info"></p>
+          </div>
+          <div class="p-2">
+            <button id="btn" type="submit">click me</button>
+          </div>
+        </div>
+      </div>
+      </div>
+              </form>
+    </body>
+</html>

@@ -1,0 +1,87 @@
+<html>
+
+    <head>
+        <title>admin</title>
+        <style>
+          table {
+            border-collapse: collapse;
+            width: 100%;
+          }
+          
+          th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #DDD;
+          }
+          
+          tr:hover {background-color: #D6EEEE;}
+          </style>
+    <link href="../static/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="C:\home\static\css\admin.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+        </head>
+        <body>
+          <section class="colored-section" id="title">
+            <div class="container-fluid">
+              <nav class="navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" href="">TherapyHome</a>
+      
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#navbarTogglerDemo02"
+                >
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+      
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                      <h1  style="color:white;">choose the doctor</h1>
+                    </li> 
+                    <li class="nav-item">
+                      <a class="nav-link" href="#footer">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#pricing">About</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#cta">Signin</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </section>
+
+          <h1>Doctors</h1>
+<form action="/message" method ="get">
+
+<table id="doctors">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>qualification</th>
+        <th>Experience</th>
+        <th>Book Doctors</th>
+        <th></th>
+    </tr>
+{% for doctor in doctors %}
+<tr><td>{{doctor['d_id']}}</td>
+<td>{{doctor['d_name']}}</td>
+<td>{{doctor['qualification']}}</td>
+<td>{{doctor['Experience']}}</td>
+<td> <input value={{doctor['d_id']}} name ="details"  type="submit"></td>
+
+</tr>
+
+
+
+{% endfor %}
+</table>
+</form>
+
+</body>
+</html>

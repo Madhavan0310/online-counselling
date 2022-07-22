@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"rel="stylesheet">
+    
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/Login.css')}}">
+  </head>
+  <p>user id is {{message}}</p>
+  <body>
+        <form  action="/login" method="post" name="myform" >
+
+
+<div class="login-box">
+  <h1><b>LOG IN</b></h1>
+  <div class="textbox">
+    <i class="fas fa-user"></i>
+    <input autocomplete="off" autofocus type="text"  name="uname" placeholder="Username">
+  </div>
+
+  <div class="textbox">
+    <i class="fas fa-lock"></i>
+    <input type="password" autocomplete="off" autofocus name="upswd" placeholder="Password">
+    </div>
+     <div id="errorBox"></div>   
+
+<input  type="submit" class="btn "value="Sign In" name="button">
+
+
+
+
+
+<p>
+  Don't have account?<a href="{{url_for('signup1')}}">sign Up</a>
+</p>
+
+<p style="color:white">     {{message}}</p>
+</div>
+  </form>
+  </body>
+</html>'
